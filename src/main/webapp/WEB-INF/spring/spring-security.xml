@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/security
+            http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+    
+    <bean class="org.scribe.up.provider.impl.Google2Provider" id="google2Provider">
+<!--         <property value="56673005399-bv2b5ut9o57dce4bansctn3oe6ora9ue.apps.googleusercontent.com" name="key" /> -->
+<!--         <property value="AKexVn5Tjdi1Gzed_cmd3jXs" name="secret" /> -->
+        <property value="988477403434-ej6nhei32v7nhis3v200pktm96ni2jpj.apps.googleusercontent.com" name="key" />
+        <property value="AIzaSyD9t1k8Bne6nGQg9wyx5mREiamMyajB_P8" name="secret" />        
+        <property value="EMAIL_AND_PROFILE" name="scope" />
+    </bean>
+
+
+    <bean class="org.scribe.up.provider.ProvidersDefinition" id="providersDefinition">
+        <property value="http://localhost:8080/j_spring_oauth_security_check" name="baseUrl" />
+        <property name="providers">
+            <list>
+                <ref bean="google2Provider" />
+            </list>
+        </property>
+    </bean>
+
+    <bean class="com.github.leleuj.ss.oauth.client.authentication.OAuthAuthenticationProvider" id="oAuthProvider">
+        <property name="providersDefinition" ref="providersDefinition" />
+    </bean>
+
+    <bean id="google2EntryPoint" class="com.github.leleuj.ss.oauth.client.web.OAuthAuthenticationEntryPoint">
+        <property name="provider" ref="google2Provider" />
+    </bean>
+
+    <bean class="com.github.leleuj.ss.oauth.client.web.OAuthAuthenticationFilter" id="oAuthFilter">
+        <property name="providersDefinition" ref="providersDefinition" />
+        <property name="authenticationManager" ref="authenticationManager" />
+    </bean>
+
+    <security:authentication-manager alias="authenticationManager">
+        <security:authentication-provider ref="oAuthProvider" />
+    </security:authentication-manager>
+
+
+    <security:http entry-point-ref="google2EntryPoint">
+        <security:custom-filter ref="oAuthFilter" after="CAS_FILTER" />
+        <security:intercept-url access="IS_AUTHENTICATED_FULLY" pattern="/user/userHome" />
+        <security:intercept-url access="IS_AUTHENTICATED_ANONYMOUSLY" pattern="/**" />
+        <security:logout />
+    </security:http>
+    
+</beans>
