@@ -8,8 +8,6 @@
             http://www.springframework.org/schema/security/spring-security-3.2.xsd">
     
     <bean class="org.scribe.up.provider.impl.Google2Provider" id="google2Provider">
-<!--         <property value="56673005399-bv2b5ut9o57dce4bansctn3oe6ora9ue.apps.googleusercontent.com" name="key" /> -->
-<!--         <property value="AKexVn5Tjdi1Gzed_cmd3jXs" name="secret" /> -->
         <property value="988477403434-ej6nhei32v7nhis3v200pktm96ni2jpj.apps.googleusercontent.com" name="key" />
         <property value="AIzaSyD9t1k8Bne6nGQg9wyx5mREiamMyajB_P8" name="secret" />        
         <property value="EMAIL_AND_PROFILE" name="scope" />

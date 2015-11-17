@@ -1,1 +1,4 @@
+com\fic\pfc\jpg\model\Usuario.class
 com\fic\pfc\jpg\controller\IndexController.class
+com\fic\pfc\jpg\controller\admin\AdminController.class
+com\fic\pfc\jpg\controller\Usercontroller.class

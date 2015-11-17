@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<%-- <link rel="stylesheet" href="<spring:theme code="css"/>" type="text/css"/> --%>
 <title>TITULO ADMIN</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
     <form:form action="adminHome" method="POST" modelAttribute="usuario">
         <table>
             <tr>
-                <td> <form:label path="nombre">First name:</form:label></td>
+                <td> <form:label path="nombre"><spring:message code="adminHome.label.nombre"/></form:label></td>
                 <td><form:input path="nombre"></form:input></td>
             </tr>
             <tr>

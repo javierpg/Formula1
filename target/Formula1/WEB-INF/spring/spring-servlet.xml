@@ -14,22 +14,17 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
     <context:component-scan base-package="com.fic.pfc.jpg.controller" />
 
     <mvc:resources mapping="/assets/**" location="/assets/" />
+<!--     <mvc:resources mapping="/assets/themes/**" location="/themes/" /> -->
 
-<!--    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
-<!--         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" /> -->
-<!--         <property name="prefix" value="/views/" /> -->
-<!--         <property name="suffix" value=".jsp" /> -->
-<!--     </bean> -->
-    
-    <!-- Tiles -->
-    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+    <!-- Tiles configuration -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
         <property name="viewClass">
             <value>
                 org.springframework.web.servlet.view.tiles2.TilesView
             </value>
         </property>
     </bean>
-    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
         <property name="definitions">
             <list>
                 <value>/WEB-INF/tiles.xml</value>
@@ -37,4 +32,39 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
         </property>
     </bean>
 
+    <!-- Messages configuration -->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="/assets/messages/messages" />
+        <property name="defaultEncoding" value="UTF-8" />
+    </bean>
+
+    <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="lang" /><!-- parametro que busca en la url -->
+    </bean>
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="defaultLocale" value="es" />
+    </bean>
+
+    <!-- Themes configuration -->
+<!--     <bean id="themeSource" class="org.springframework.ui.context.support.ResourceBundleThemeSource"> -->
+<!--         <property name="basenamePrefix" value="/assets/themes/theme-" /> -->
+<!--     </bean> -->
+    
+<!--     <bean id="themeChangeInterceptor" class="org.springframework.web.servlet.theme.ThemeChangeInterceptor"> -->
+<!--         <property name="paramName" value="theme" />parametro que busca en la url -->
+<!--     </bean> -->
+<!--     <bean id="themeResolver" class="org.springframework.web.servlet.theme.CookieThemeResolver"> -->
+<!--         <property name="defaultThemeName" value="default" /> -->
+<!--     </bean> -->
+
+    <!-- Handlers de mensajes y temas -->
+    <bean id="handlerMapping" class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+        <property name="interceptors">
+            <list>
+                <ref bean="localeChangeInterceptor" />
+<!--                 <ref bean="themeChangeInterceptor" /> -->
+            </list>
+        </property>
+    </bean>
 </beans>

@@ -1,5 +1,7 @@
 package com.fic.pfc.jpg.controller.admin;
 
+import java.util.Locale;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -25,7 +27,8 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/adminHome", method = RequestMethod.POST)
-    public ModelAndView prueba(@ModelAttribute("usuario") final Usuario usuario, final BindingResult result) {
+    public ModelAndView prueba(final Locale locale, @ModelAttribute("usuario") final Usuario usuario,
+            final BindingResult result) {
         LOG.info("Probando");
         System.out.println("Usuario: " + usuario.getNombre());
         final ModelAndView mv = new ModelAndView("index");
