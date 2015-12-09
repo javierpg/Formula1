@@ -5,10 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title></title>
 </head>
 <body>
-<%-- <p><spring:message code="label.menu"/></p> --%>
-menu
+    <a class="btn btn-large btn-primary right" href="/Formula1/admin/adminHome"><spring:message code="adminMenu.item.admin" /></a>
+    <a class="btn btn-large btn-primary right" href="/Formula1/admin/pais"><spring:message code="adminMenu.item.pais" /></a>
+    <a class="btn btn-large btn-primary right" href="/Formula1/admin/escuderia"><spring:message code="adminMenu.item.escuderia" /></a>
+    <a class="btn btn-large btn-primary right" href="/Formula1/admin/piloto"><spring:message code="adminMenu.item.piloto" /></a>
 </body>
 </html>

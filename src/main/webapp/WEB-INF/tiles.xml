@@ -19,18 +19,38 @@
     </definition>
  
     <definition name="index" extends="adminTemplate">
-        <put-attribute name="title" value="Contact Manager" />
+        <put-attribute name="title" value="Index" />
         <put-attribute name="body" value="/views/index.jsp" />
     </definition>
     
+    <!--  Administracion -->
+    
     <definition name="adminHome" extends="adminTemplate">  
-        <put-attribute name="title" value="Titulo Admin" />  
+        <put-attribute name="title" value="Admin" />  
         <put-attribute name="body" value="/views/adminHome.jsp" />  
-    </definition>  
+    </definition>
+    
+    <definition name="pais" extends="adminTemplate">  
+        <put-attribute name="title" value="Admin" />  
+        <put-attribute name="body" value="/views/pais.jsp" />  
+    </definition>
+    
+    <definition name="escuderia" extends="adminTemplate">  
+        <put-attribute name="title" value="Escuderia" />  
+        <put-attribute name="body" value="/views/escuderia.jsp" />  
+    </definition> 
+    
+    <definition name="piloto" extends="adminTemplate">  
+        <put-attribute name="title" value="Piloto" />  
+        <put-attribute name="body" value="/views/piloto.jsp" />  
+    </definition> 
+    
+    <!-- Usuario -->
     
     <definition name="userHome" extends="userTemplate">  
-        <put-attribute name="title" value="Titulo User" />  
+        <put-attribute name="title" value="User" />  
         <put-attribute name="body" value="/views/userHome.jsp" />  
     </definition> 
+    
  
 </tiles-definitions>

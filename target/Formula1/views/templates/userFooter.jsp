@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-pie de pagina
+    <label><spring:message code="user.footer.message" /></label>
 </body>
 </html>
