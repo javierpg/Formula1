@@ -10,10 +10,9 @@ import com.github.leleuj.ss.oauth.client.authentication.OAuthAuthenticationToken
 
 @Controller
 @RequestMapping("user")
-public class Usercontroller {
+public class UserController {
 
     // @Secured(value = "IS_AUTHENTICATED_FULLY")
-    // @RequestMapping(value = "/userHome", method = RequestMethod.GET)
     @Secured(value = "IS_AUTHENTICATED_FULLY")
     @RequestMapping("/userHome")
     public ModelAndView userHome() {
