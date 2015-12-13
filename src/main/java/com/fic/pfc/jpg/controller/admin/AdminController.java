@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fic.pfc.jpg.model.Usuario;
 import com.fic.pfc.jpg.service.UsuarioService;
+import com.fic.pfc.jpg.ui.UsuarioUI;
 
 @Controller
 @RequestMapping("admin/adminHome")
@@ -27,13 +27,13 @@ public class AdminController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public ModelAndView adminEntrada() {
         LOG.info("Entrando en administracion");
-        final ModelAndView mv = new ModelAndView("adminHome", "usuario", new Usuario());
+        final ModelAndView mv = new ModelAndView("adminHome", "usuario", new UsuarioUI());
         mv.addObject("users", this.service.findAll());
         return mv;
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public ModelAndView addUser(final Locale locale, @ModelAttribute("usuario") final Usuario usuario,
+    public ModelAndView addUser(final Locale locale, @ModelAttribute("usuario") final UsuarioUI usuario,
             final BindingResult result) {
         LOG.info("Anadiendo usuario" + usuario.getNombre() + " " + usuario.getCorreo());
         usuario.setIdRol(1);

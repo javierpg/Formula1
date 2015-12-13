@@ -29,7 +29,7 @@ public class PaisDAOImpl implements PaisDAO {
     }
 
     public Pais find(final Integer id) {
-        return this.hibernate.load(Pais.class, id);
+        return this.hibernate.get(Pais.class, id);
     }
 
     public void delete(final Pais pais) {

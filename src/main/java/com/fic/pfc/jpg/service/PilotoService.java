@@ -2,13 +2,15 @@ package com.fic.pfc.jpg.service;
 
 import java.util.List;
 
-import com.fic.pfc.jpg.model.Piloto;
+import com.fic.pfc.jpg.ui.PilotoUI;
 
 public interface PilotoService {
 
-    public void save(Piloto usuario);
+    public void save(PilotoUI piloto);
 
-    public List<Piloto> findAll();
+    public List<PilotoUI> findAll();
+
+    public PilotoUI find(Integer id);
 
     public void delete(Integer id);
 

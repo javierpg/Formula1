@@ -29,7 +29,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
     }
 
     public Usuario find(final Integer id) {
-        return this.hibernate.load(Usuario.class, id);
+        return this.hibernate.get(Usuario.class, id);
     }
 
     public void delete(final Usuario user) {

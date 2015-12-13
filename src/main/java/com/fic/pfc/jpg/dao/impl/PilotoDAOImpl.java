@@ -29,7 +29,7 @@ public class PilotoDAOImpl implements PilotoDAO {
     }
 
     public Piloto find(final Integer id) {
-        return this.hibernate.load(Piloto.class, id);
+        return this.hibernate.get(Piloto.class, id);
     }
 
     public void delete(final Piloto piloto) {

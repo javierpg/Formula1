@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.fic.pfc.jpg.model.Pais;
 import com.fic.pfc.jpg.service.PaisService;
+import com.fic.pfc.jpg.ui.PaisUI;
 
 @Controller
 @RequestMapping("admin/pais")
@@ -33,13 +34,13 @@ public class PaisController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public ModelAndView addPais(final Locale locale, @ModelAttribute("pais") final Pais pais,
+    public String addPais(final Locale locale, @ModelAttribute("pais") final PaisUI pais,
             final BindingResult result) {
         LOG.info("Anadiendo pais" + pais.getNombre());
         this.service.save(pais);
 
         final ModelAndView mv = new ModelAndView("pais");
-        return mv;
+        return "redirect:/admin/pais";
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)

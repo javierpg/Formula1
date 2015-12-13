@@ -3,6 +3,13 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
+    <definition name="indexTemplate" template="/views/templates/adminLayout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/views/templates/indexHeader.jsp" />
+        <put-attribute name="menu" value="/views/templates/indexMenu.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/views/templates/indexFooter.jsp" />
+    </definition>    
     <definition name="adminTemplate" template="/views/templates/adminLayout.jsp">
         <put-attribute name="title" value="" />
         <put-attribute name="header" value="/views/templates/adminHeader.jsp" />
@@ -17,8 +24,10 @@
         <put-attribute name="body" value="" />
         <put-attribute name="footer" value="/views/templates/userFooter.jsp" />
     </definition>
+    
+        <!--  Index -->
  
-    <definition name="index" extends="adminTemplate">
+    <definition name="index" extends="indexTemplate">
         <put-attribute name="title" value="Index" />
         <put-attribute name="body" value="/views/index.jsp" />
     </definition>
@@ -33,6 +42,11 @@
     <definition name="pais" extends="adminTemplate">  
         <put-attribute name="title" value="Admin" />  
         <put-attribute name="body" value="/views/pais.jsp" />  
+    </definition>
+    
+    <definition name="circuito" extends="adminTemplate">  
+        <put-attribute name="title" value="Circuito" />  
+        <put-attribute name="body" value="/views/circuito.jsp" />  
     </definition>
     
     <definition name="escuderia" extends="adminTemplate">  

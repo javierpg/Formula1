@@ -111,6 +111,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
                 <beans:prop key="hibernate.format_sql">true</beans:prop>
                 <beans:prop key="connection.pool_size">100</beans:prop>
                 <beans:prop key="current_session_context_class">thread</beans:prop>
+<!--                 <beans:prop key="hibernate.enable_lazy_load_no_trans">true</beans:prop> -->
                 <beans:prop key="cache.provider_class">org.hibernate.cache.NoCacheProvider</beans:prop>
                 <beans:prop key="hibernate.hbm2ddl.auto">validate</beans:prop>
             </beans:props>
@@ -120,16 +121,16 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
     <beans:bean id="UsuarioDAO" class="com.fic.pfc.jpg.dao.impl.UsuarioDAOImpl" abstract="false" lazy-init="false">
         <beans:property name="sessionFactory" ref="mySessionFactory" />
     </beans:bean>
-    <beans:bean id="CircuitoDAO" class="com.fic.pfc.jpg.dao.impl.CircuitoDAOImpl" abstract="false" lazy-init="true">
+    <beans:bean id="CircuitoDAO" class="com.fic.pfc.jpg.dao.impl.CircuitoDAOImpl" abstract="false" lazy-init="false">
         <beans:property name="sessionFactory" ref="mySessionFactory" />
     </beans:bean>
-    <beans:bean id="EscuderiaDAO" class="com.fic.pfc.jpg.dao.impl.EscuderiaDAOImpl" abstract="false" lazy-init="true">
+    <beans:bean id="EscuderiaDAO" class="com.fic.pfc.jpg.dao.impl.EscuderiaDAOImpl" abstract="false" lazy-init="false">
         <beans:property name="sessionFactory" ref="mySessionFactory" />
     </beans:bean>
     <beans:bean id="PaisDAO" class="com.fic.pfc.jpg.dao.impl.PaisDAOImpl" abstract="false" lazy-init="false">
         <beans:property name="sessionFactory" ref="mySessionFactory" />
     </beans:bean>
-    <beans:bean id="PilotoDAO" class="com.fic.pfc.jpg.dao.impl.PilotoDAOImpl" abstract="false" lazy-init="true">
+    <beans:bean id="PilotoDAO" class="com.fic.pfc.jpg.dao.impl.PilotoDAOImpl" abstract="false" lazy-init="false">
         <beans:property name="sessionFactory" ref="mySessionFactory" />
     </beans:bean>
 

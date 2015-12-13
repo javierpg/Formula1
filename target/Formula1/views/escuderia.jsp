@@ -18,11 +18,15 @@
                     </form:label></td>
                 <td><form:input path="nombre"></form:input></td>
             </tr>
-  <%--            <tr>
-             <td><form:select path="pais">
-                        <form:options items="${paises}" />
+             <tr>
+                <td>
+                    <label><spring:message code="escuderia.label.pais" /></label>
+                </td>             
+             <td><form:select path="pais.id">
+                        <form:option value="0" label="Selecciona" />
+                        <form:options items="${paises}" itemValue="id" itemLabel="nombre" />
                     </form:select></td> 
-            </tr>--%>
+            </tr>
             <tr>
                 <td></td>
                 <td><input type="submit" value=<spring:message code="escuderia.button.guardar" /> /></td>

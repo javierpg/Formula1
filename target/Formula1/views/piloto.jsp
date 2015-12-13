@@ -17,10 +17,24 @@
                         <spring:message code="piloto.label.nombre" />
                     </form:label></td>
                 <td><form:input path="nombre"></form:input></td>
-            </tr>  
+            </tr>
+            <tr>
+                <td><label><spring:message code="piloto.label.pais" /></label></td>
+                <td><form:select path="pais.id">
+                        <form:option value="0" label="Selecciona" />
+                        <form:options items="${paises}" itemValue="id" itemLabel="nombre" />
+                    </form:select></td>
+            </tr>
+            <tr>
+                <td><label><spring:message code="piloto.label.escuderia" /></label></td>
+                <td><form:select path="escuderia.id">
+                        <form:option value="0" label="Selecciona" />
+                        <form:options items="${escuderias}" itemValue="id" itemLabel="nombre" />
+                    </form:select></td>
+            </tr>
             <tr>
                 <td></td>
-                <td><input type="submit"value=<spring:message code="piloto.button.guardar" /> /></td>
+                <td><input type="submit" value=<spring:message code="piloto.button.guardar" /> /></td>
             </tr>
         </table>
     </form:form>

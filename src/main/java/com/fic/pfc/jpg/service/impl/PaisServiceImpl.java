@@ -11,6 +11,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.fic.pfc.jpg.dao.PaisDAO;
 import com.fic.pfc.jpg.model.Pais;
 import com.fic.pfc.jpg.service.PaisService;
+import com.fic.pfc.jpg.ui.PaisUI;
+import com.fic.pfc.jpg.utils.AdapterEntity;
+import com.fic.pfc.jpg.utils.AdapterUI;
 
 @Service
 public class PaisServiceImpl implements PaisService {
@@ -19,14 +22,14 @@ public class PaisServiceImpl implements PaisService {
     private PaisDAO dao;
 
     @Transactional
-    public void save(final Pais pais) {
-        this.dao.save(pais);
+    public void save(final PaisUI pais) {
+        this.dao.save(AdapterEntity.adapt(pais));
     }
 
     @Transactional
-    public List<Pais> findAll() {
-        final List<Pais> result = new ArrayList<Pais>();
-        result.addAll(this.dao.findAll());
+    public List<PaisUI> findAll() {
+        final List<PaisUI> result = new ArrayList<PaisUI>();
+        result.addAll(AdapterUI.adaptListPais(this.dao.findAll()));
         return result;
     }
 
@@ -36,6 +39,12 @@ public class PaisServiceImpl implements PaisService {
         if (pais != null) {
             this.dao.delete(pais);
         }
+    }
+
+    @Transactional
+    public PaisUI find(final Integer id) {
+        final Pais pais = this.dao.find(id);
+        return AdapterUI.adapt(pais);
     }
 
 }

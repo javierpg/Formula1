@@ -1,5 +1,7 @@
 package com.fic.pfc.jpg.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,8 +11,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "usuario")
-public class Usuario {
+public class Usuario implements Serializable {
 
+    private static final long serialVersionUID = 8958475092110780713L;
     @Id
     @Column(name = "id_usuario")
     @GeneratedValue(strategy = GenerationType.AUTO)

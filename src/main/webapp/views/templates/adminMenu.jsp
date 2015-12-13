@@ -8,9 +8,9 @@
 <title></title>
 </head>
 <body>
-    <a class="btn btn-large btn-primary right" href="/Formula1/admin/adminHome"><spring:message code="adminMenu.item.admin" /></a>
     <a class="btn btn-large btn-primary right" href="/Formula1/admin/pais"><spring:message code="adminMenu.item.pais" /></a>
     <a class="btn btn-large btn-primary right" href="/Formula1/admin/escuderia"><spring:message code="adminMenu.item.escuderia" /></a>
     <a class="btn btn-large btn-primary right" href="/Formula1/admin/piloto"><spring:message code="adminMenu.item.piloto" /></a>
+    <a class="btn btn-large btn-primary right" href="/Formula1/admin/circuito"><spring:message code="adminMenu.item.circuito" /></a>
 </body>
 </html>

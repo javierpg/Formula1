@@ -11,6 +11,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.fic.pfc.jpg.dao.CircuitoDAO;
 import com.fic.pfc.jpg.model.Circuito;
 import com.fic.pfc.jpg.service.CircuitoService;
+import com.fic.pfc.jpg.ui.CircuitoUI;
+import com.fic.pfc.jpg.utils.AdapterEntity;
+import com.fic.pfc.jpg.utils.AdapterUI;
 
 @Service
 public class CircuitoServiceImpl implements CircuitoService {
@@ -19,14 +22,14 @@ public class CircuitoServiceImpl implements CircuitoService {
     private CircuitoDAO dao;
 
     @Transactional
-    public void save(final Circuito circuito) {
-        this.dao.save(circuito);
+    public void save(final CircuitoUI circuito) {
+        this.dao.save(AdapterEntity.adapt(circuito));
     }
 
     @Transactional
-    public List<Circuito> findAll() {
-        final List<Circuito> result = new ArrayList<Circuito>();
-        result.addAll(this.dao.findAll());
+    public List<CircuitoUI> findAll() {
+        final List<CircuitoUI> result = new ArrayList<CircuitoUI>();
+        result.addAll(AdapterUI.adaptListCircuito(this.dao.findAll()));
         return result;
     }
 
@@ -36,6 +39,12 @@ public class CircuitoServiceImpl implements CircuitoService {
         if (circuito != null) {
             this.dao.delete(circuito);
         }
+    }
+
+    @Transactional
+    public CircuitoUI find(final Integer id) {
+        final Circuito circuito = this.dao.find(id);
+        return AdapterUI.adapt(circuito);
     }
 
 }

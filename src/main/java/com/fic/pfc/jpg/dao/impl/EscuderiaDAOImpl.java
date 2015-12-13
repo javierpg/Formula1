@@ -28,7 +28,7 @@ public class EscuderiaDAOImpl implements EscuderiaDAO {
     }
 
     public Escuderia find(final Integer id) {
-        return this.hibernate.load(Escuderia.class, id);
+        return this.hibernate.get(Escuderia.class, id);
     }
 
     public void delete(final Escuderia escuderia) {

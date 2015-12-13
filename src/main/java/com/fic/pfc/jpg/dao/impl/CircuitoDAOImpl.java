@@ -29,7 +29,7 @@ public class CircuitoDAOImpl implements CircuitoDAO {
     }
 
     public Circuito find(final Integer id) {
-        return this.hibernate.load(Circuito.class, id);
+        return this.hibernate.get(Circuito.class, id);
     }
 
     public void delete(final Circuito circuito) {

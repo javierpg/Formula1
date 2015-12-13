@@ -1,15 +1,22 @@
 package com.fic.pfc.jpg.model;
 
+import java.io.Serializable;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "circuito")
-public class Circuito {
+public class Circuito implements Serializable {
+
+    private static final long serialVersionUID = 3106580660311576806L;
 
     @Id
     @Column(name = "id_circuito")
@@ -19,11 +26,9 @@ public class Circuito {
     @Column
     private String nombre;
 
-    // @Column
-    // private Pais pais;
-
-    @Column(name = "id_pais")
-    private Integer idPais;
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "id_pais")
+    private Pais pais;
 
     public Integer getId() {
         return this.id;
@@ -41,20 +46,12 @@ public class Circuito {
         this.nombre = nombre;
     }
 
-    public Integer getIdPais() {
-        return this.idPais;
+    public Pais getPais() {
+        return this.pais;
     }
 
-    public void setIdPais(final Integer idPais) {
-        this.idPais = idPais;
+    public void setPais(final Pais pais) {
+        this.pais = pais;
     }
-
-    // public Pais getPais() {
-    // return this.pais;
-    // }
-    //
-    // public void setPais(final Pais pais) {
-    // this.pais = pais;
-    // }
 
 }
