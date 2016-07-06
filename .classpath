@@ -114,4 +114,5 @@
   <classpathentry kind="var" path="M2_REPO/com/fasterxml/classmate/1.1.0/classmate-1.1.0.jar" sourcepath="M2_REPO/com/fasterxml/classmate/1.1.0/classmate-1.1.0-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/commons-dbcp/commons-dbcp/20030825.184428/commons-dbcp-20030825.184428.jar"/>
   <classpathentry kind="var" path="M2_REPO/commons-pool/commons-pool/20030825.183949/commons-pool-20030825.183949.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-simple/1.7.6/slf4j-simple-1.7.6.jar" sourcepath="M2_REPO/org/slf4j/slf4j-simple/1.7.6/slf4j-simple-1.7.6-sources.jar"/>
 </classpath>

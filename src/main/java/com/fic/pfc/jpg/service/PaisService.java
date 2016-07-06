@@ -14,4 +14,6 @@ public interface PaisService {
 
     public void delete(Integer id);
 
+    public List<PaisUI> find(final PaisUI pais);
+
 }

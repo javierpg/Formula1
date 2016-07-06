@@ -38,8 +38,10 @@ public class AdapterUI {
         final PilotoUI adapted = new PilotoUI();
         adapted.setId(piloto.getId());
         adapted.setNombre(piloto.getNombre());
-        adapted.setPais(adapt(piloto.getPais()));
-        adapted.setEscuderia(adapt(piloto.getEscuderia()));
+        adapted.setIdPais(piloto.getPais().getId());
+        adapted.setNombrePais(piloto.getPais().getNombre());
+        adapted.setIdEscuderia(piloto.getEscuderia().getId());
+        adapted.setNombreEscuderia(piloto.getEscuderia().getNombre());
         return adapted;
     }
 
@@ -55,7 +57,8 @@ public class AdapterUI {
         final EscuderiaUI adapted = new EscuderiaUI();
         adapted.setId(escuderia.getId());
         adapted.setNombre(escuderia.getNombre());
-        adapted.setPais(adapt(escuderia.getPais()));
+        adapted.setIdPais(escuderia.getPais().getId());
+        adapted.setNombrePais(escuderia.getPais().getNombre());
         return adapted;
     }
 
@@ -86,7 +89,8 @@ public class AdapterUI {
         final CircuitoUI adapted = new CircuitoUI();
         adapted.setId(circuito.getId());
         adapted.setNombre(circuito.getNombre());
-        adapted.setPais(adapt(circuito.getPais()));
+        adapted.setIdPais(circuito.getPais().getId());
+        adapted.setNombrePais(circuito.getPais().getNombre());
         return adapted;
     }
 

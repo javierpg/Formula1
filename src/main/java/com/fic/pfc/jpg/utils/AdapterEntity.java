@@ -38,8 +38,14 @@ public class AdapterEntity {
         final Piloto adapted = new Piloto();
         adapted.setId(piloto.getId());
         adapted.setNombre(piloto.getNombre());
-        adapted.setPais(adapt(piloto.getPais()));
-        adapted.setEscuderia(adapt(piloto.getEscuderia()));
+        final Pais pais = new Pais();
+        pais.setId(piloto.getIdPais());
+        pais.setNombre(piloto.getNombrePais());
+        adapted.setPais(pais);
+        final Escuderia escuderia = new Escuderia();
+        escuderia.setId(piloto.getIdEscuderia());
+        escuderia.setNombre(piloto.getNombreEscuderia());
+        adapted.setEscuderia(escuderia);
         return adapted;
     }
 
@@ -55,7 +61,10 @@ public class AdapterEntity {
         final Escuderia adapted = new Escuderia();
         adapted.setId(escuderia.getId());
         adapted.setNombre(escuderia.getNombre());
-        adapted.setPais(adapt(escuderia.getPais()));
+        final Pais pais = new Pais();
+        pais.setId(escuderia.getIdPais());
+        pais.setNombre(escuderia.getNombrePais());
+        adapted.setPais(pais);
         return adapted;
     }
 
@@ -86,7 +95,10 @@ public class AdapterEntity {
         final Circuito adapted = new Circuito();
         adapted.setId(circuito.getId());
         adapted.setNombre(circuito.getNombre());
-        adapted.setPais(adapt(circuito.getPais()));
+        final Pais pais = new Pais();
+        pais.setId(circuito.getIdPais());
+        pais.setNombre(circuito.getNombrePais());
+        adapted.setPais(pais);
         return adapted;
     }
 

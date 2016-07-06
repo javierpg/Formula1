@@ -38,6 +38,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
     <!-- Messages configuration -->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basename" value="/assets/messages/messages" />
+        <property name="fileEncodings" value="UTF-8" />
         <property name="defaultEncoding" value="UTF-8" />
     </bean>
 

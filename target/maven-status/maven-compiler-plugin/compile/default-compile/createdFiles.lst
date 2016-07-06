@@ -2,7 +2,6 @@ com\fic\pfc\jpg\controller\admin\PaisController.class
 com\fic\pfc\jpg\model\Escuderia.class
 com\fic\pfc\jpg\service\PilotoService.class
 com\fic\pfc\jpg\dao\PaisDAO.class
-com\fic\pfc\jpg\controller\Usercontroller.class
 com\fic\pfc\jpg\service\impl\PilotoServiceImpl.class
 com\fic\pfc\jpg\dao\impl\PaisDAOImpl.class
 com\fic\pfc\jpg\ui\CircuitoUI.class
@@ -17,12 +16,14 @@ com\fic\pfc\jpg\model\Usuario.class
 com\fic\pfc\jpg\controller\admin\EscuderiaController.class
 com\fic\pfc\jpg\dao\impl\PilotoDAOImpl.class
 com\fic\pfc\jpg\service\PaisService.class
+com\fic\pfc\jpg\controller\admin\CircuitoController.class
 com\fic\pfc\jpg\service\impl\UsuarioServiceImpl.class
 com\fic\pfc\jpg\utils\AdapterEntity.class
 com\fic\pfc\jpg\controller\admin\PilotoController.class
 com\fic\pfc\jpg\model\Pais.class
 com\fic\pfc\jpg\service\impl\CircuitoServiceImpl.class
 com\fic\pfc\jpg\dao\UsuarioDAO.class
+com\fic\pfc\jpg\controller\UserController.class
 com\fic\pfc\jpg\controller\IndexController.class
 com\fic\pfc\jpg\dao\impl\UsuarioDAOImpl.class
 com\fic\pfc\jpg\service\UsuarioService.class

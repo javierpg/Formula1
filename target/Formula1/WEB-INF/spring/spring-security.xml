@@ -9,7 +9,8 @@
     
     <bean class="org.scribe.up.provider.impl.Google2Provider" id="google2Provider">
         <property value="988477403434-ej6nhei32v7nhis3v200pktm96ni2jpj.apps.googleusercontent.com" name="key" />
-        <property value="AIzaSyD9t1k8Bne6nGQg9wyx5mREiamMyajB_P8" name="secret" />        
+        <property value="X1_9dN9dq6luKC0O6ORnG4OF" name="secret" />
+<!--         <property value="AIzaSyD9t1k8Bne6nGQg9wyx5mREiamMyajB_P8" name="secret" />         -->
         <property value="EMAIL_AND_PROFILE" name="scope" />
     </bean>
 

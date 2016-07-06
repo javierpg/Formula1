@@ -39,6 +39,7 @@
         <thead>
             <tr>
                 <td><spring:message code="escuderia.label.nombre" /></td>
+                <td><spring:message code="escuderia.label.pais" /></td>
                 <td><spring:message code="escuderia.label.eliminar" /></td>
             </tr>
         </thead>
@@ -46,6 +47,7 @@
             <c:forEach items="${escuderias}" var="escuderia" varStatus="status">
                 <tr id="row_${escuderia.id}">
                     <td>${escuderia.nombre}</td>
+                    <td>${escuderia.pais.nombre}</td>
                     <td><a href="escuderia/delete/${escuderia.id}"><spring:message
                                 code="escuderia.label.eliminar" /></a></td>
                 </tr>

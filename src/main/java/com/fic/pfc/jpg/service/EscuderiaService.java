@@ -14,4 +14,6 @@ public interface EscuderiaService {
 
     public void delete(Integer id);
 
+    public List<EscuderiaUI> find(EscuderiaUI escuderia);
+
 }

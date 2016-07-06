@@ -14,4 +14,6 @@ public interface PilotoService {
 
     public void delete(Integer id);
 
+    public List<PilotoUI> find(final PilotoUI pilotoUI);
+
 }

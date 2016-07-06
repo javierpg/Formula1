@@ -45,6 +45,8 @@
     <security:http entry-point-ref="google2EntryPoint">
         <security:custom-filter ref="oAuthFilter" after="CAS_FILTER" />
         <security:intercept-url access="IS_AUTHENTICATED_FULLY" pattern="/user/userHome" />
+        <security:intercept-url access="IS_AUTHENTICATED_FULLY" pattern="/admin/adminHome" />
+         <security:intercept-url access="IS_AUTHENTICATED_ANONYMOUSLY" pattern="/index/index" />        
         <security:intercept-url access="IS_AUTHENTICATED_ANONYMOUSLY" pattern="/**" />
         <security:logout />
     </security:http>

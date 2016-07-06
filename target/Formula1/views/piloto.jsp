@@ -6,17 +6,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <%--  <link rel="stylesheet" href="<spring:theme code="css"/>" type="text/css"/> --%>
 <title><spring:message code="piloto.titulo" /></title>
+<link href="//oss.maxcdn.com/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" rel="stylesheet"></link>
+<script src="//oss.maxcdn.com/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
+<!-- <script type="text/javascript" src="validator.js"></script> -->
 </head>
 <body>
-    <form:form action="piloto" method="POST" modelAttribute="piloto">
+    <form:form id="altaPiloto" action="piloto" method="POST" modelAttribute="piloto">
         <table>
             <tr>
                 <td><form:label path="nombre">
                         <spring:message code="piloto.label.nombre" />
                     </form:label></td>
-                <td><form:input path="nombre"></form:input></td>
+                <td><form:input id="nombre" path="nombre"></form:input></td>
             </tr>
             <tr>
                 <td><label><spring:message code="piloto.label.pais" /></label></td>
@@ -40,17 +44,21 @@
     </form:form>
     <br />
     <br />
-    <table align="center" border="1" cellspacing="0">
+    <table class="table table-striped">
         <thead>
             <tr>
-                <td><spring:message code="piloto.label.nombre" /></td>
-                <td><spring:message code="piloto.label.eliminar" /></td>
+                <th><spring:message code="piloto.label.nombre" /></th>
+                <th><spring:message code="piloto.label.pais" /></th>
+                <th><spring:message code="piloto.label.escuderia" /></th>
+                <th><spring:message code="piloto.label.eliminar" /></th>
             </tr>
         </thead>
         <tbody>
             <c:forEach items="${pilotos}" var="piloto" varStatus="status">
                 <tr id="row_${piloto.id}">
                     <td>${piloto.nombre}</td>
+                    <td>${piloto.pais.nombre}</td>
+                    <td>${piloto.escuderia.nombre}</td>
                     <td><a href="piloto/delete/${piloto.id}"><spring:message code="piloto.label.eliminar" /></a></td>
                 </tr>
             </c:forEach>
@@ -59,4 +67,14 @@
     <br />
     <br />
 </body>
+<script type=”text/javascript”>
+    <script>
+    $(document).ready(function() {
+        alert( "document loaded");
+    });
+ 
+    $(window).load(function() {
+       alert("window loaded");
+    });
+</script>
 </html>

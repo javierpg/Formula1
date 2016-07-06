@@ -22,8 +22,8 @@ public class UserController {
                 .getAuthentication();
         System.out.println("name: " + oa.getUserProfile().getAttributes().get("name"));
         System.out.println("mail: " + oa.getUserProfile().getAttributes().get("email"));
-        mv.addObject("name", oa.getUserProfile().getAttributes().get("name"));
-        mv.addObject("mail", oa.getUserProfile().getAttributes().get("email"));
+        // mv.addObject("name", oa.getUserProfile().getAttributes().get("name"));
+        // mv.addObject("mail", oa.getUserProfile().getAttributes().get("email"));
         return mv;
     }
 }

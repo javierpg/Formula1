@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <%--  <link rel="stylesheet" href="<spring:theme code="css"/>" type="text/css"/> --%>
 <title><spring:message code="adminHome.label.titulo" /></title>
 </head>
@@ -34,6 +34,16 @@
                 <td></td>
                 <td><input type="submit" value=<spring:message code="adminHome.button.guardar" /> /></td>
             </tr>
+            
+        </table>
+    </form:form>
+         <form:form action="adminHome/logout" method="POST" modelAttribute="usuario">
+        <table>
+            <tr>
+                <td></td>
+                <td><input type="submit" value=<spring:message code="adminHome.button.guardar" /> /></td>
+            </tr>
+            
         </table>
     </form:form>
     <br />

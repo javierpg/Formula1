@@ -1,16 +1,26 @@
 package com.fic.pfc.jpg.ui;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 public class PaisUI {
 
     private Integer id;
     private String nombre;
+
+    @Override
+    public boolean equals(final Object other) {
+        if (!(other instanceof PaisUI)) {
+            return false;
+        }
+        final PaisUI castOther = (PaisUI) other;
+        return new EqualsBuilder().append(this.id, castOther.id).append(this.nombre, castOther.nombre).isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder().append(this.id).append(this.nombre).toHashCode();
+    }
 
     public Integer getId() {
         return this.id;

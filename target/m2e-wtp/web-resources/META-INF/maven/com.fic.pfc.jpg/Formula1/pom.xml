@@ -216,6 +216,13 @@
             <artifactId>commons-collections</artifactId>
             <version>${commons-collections.version}</version>
         </dependency>
+        
+        <!-- SLFJ -->
+        <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.7.6</version>
+    </dependency>
     </dependencies>
     <build>
         <finalName>Formula1</finalName>

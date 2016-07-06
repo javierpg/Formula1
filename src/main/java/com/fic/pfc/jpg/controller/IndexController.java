@@ -2,6 +2,7 @@ package com.fic.pfc.jpg.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,6 +20,12 @@ public class IndexController {
     @RequestMapping("/index")
     public ModelAndView index() {
         LOG.info("Entrando en la app");
+        // final OAuthAuthenticationToken oa = (OAuthAuthenticationToken) SecurityContextHolder.getContext()
+        // .getAuthentication();
+        // System.out.println("name: " + oa.getUserProfile().getAttributes().get("name"));
+        // System.out.println("mail: " + oa.getUserProfile().getAttributes().get("email"));
+        SecurityContextHolder.createEmptyContext();
+        SecurityContextHolder.getContext();
         final ModelAndView mv = new ModelAndView("index");
         return mv;
     }

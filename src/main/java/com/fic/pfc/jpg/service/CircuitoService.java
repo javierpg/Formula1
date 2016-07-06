@@ -14,4 +14,6 @@ public interface CircuitoService {
 
     public void delete(Integer id);
 
+    public List<CircuitoUI> find(CircuitoUI circuito);
+
 }
